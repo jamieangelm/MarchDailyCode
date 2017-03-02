@@ -2,28 +2,30 @@
 #include <Windows.h>
 using namespace std;
 
-void Jukebox(int noise);
+char input;
+void Jukebox(char input);
 
 int main() {
+	
+	Jukebox(input);
 
-	char input;
-	int noise;
+}
 
-	Jukebox(noise);
+void Jukebox(char input) {
+	cout << "Dog (g), Cat (c), Pig (p) " << endl;
+	cin >> input;
 	switch (input) {
 	case 'd':
 		cout << "d";
+		PlaySound("dog.wav", NULL, SND_FILENAME);
 		break;
 	case 'c':
 		cout << "c";
+		PlaySound("cat.wav", NULL, SND_FILENAME);
 		break;
 	case 'p':
 		cout << "p";
+		PlaySound("pig.wav", NULL, SND_FILENAME);
 		break;
 	}
-}
-
-void Jukebox(int noise) {
-	cout << "Dog (g), Cat (c), Pig (p) " << endl;
-
 }
